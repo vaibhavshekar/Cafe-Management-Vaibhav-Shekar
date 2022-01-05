@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 27 10:23:00 2021
-
-@author: Administrator
-"""
-
-
-
 from tkinter import*
 import random
 import time;
@@ -14,16 +5,16 @@ import datetime
 
 
 root= Tk()
-root.geometry("1600x8000")
-root.title("fidddlestick's cafe")
+root.title("Mocha Tree")
 root.configure(background='#5F755E')
+root.attributes('-fullscreen', True)
 
 Tops = Frame(root, width=1350,height=100,bd=14, relief="raise")
 Tops.pack(side=TOP)
 
-f1 = Frame(root, width=900,height=650,bd=8, relief="raise")
+f1 = Frame(root, width=900,height=750,bd=8, relief="raise")
 f1.pack(side=LEFT)
-f2 = Frame(root, width=440,height=650,bd=8, relief="raise")
+f2 = Frame(root, width=440,height=750,bd=8, relief="raise")
 f2.pack(side=RIGHT)
 
 ft2 = Frame(f2, width=440,height=450,bd=12, relief="raise")
@@ -31,21 +22,21 @@ ft2.pack(side=TOP)
 fb2 = Frame(f2, width=440,height=250,bd=16, relief="raise")
 fb2.pack(side=BOTTOM)
 
-f1a = Frame(f1, width=900,height=330,bd=8, relief="raise")
+f1a = Frame(f1, width=900,height=430,bd=8, relief="raise")
 f1a.pack(side=TOP)
-f2a = Frame(f1, width=900,height=320,bd=6, relief="raise")
-f2a.pack(side=BOTTOM)
+# f2a = Frame(f1, width=900,height=320,bd=6, relief="raise")
+# f2a.pack(side=BOTTOM)
 
-f1aa = Frame(f1a, width = 400, height=330,bd=16, relief="raise")
+f1aa = Frame(f1a, width = 400, height=630,bd=16, relief="raise")
 f1aa.pack(side=LEFT)
-f1ab = Frame(f1a, width = 400, height=330,bd=16, relief="raise")
+f1ab = Frame(f1a, width = 400, height=630,bd=16, relief="raise")
 f1ab.pack(side=RIGHT)
 
 
-f2aa = Frame(f2a, width = 450, height=330,bd=14, relief="raise")
-f2aa.pack(side=LEFT)
-f2ab = Frame(f2a, width = 450, height=330,bd=14, relief="raise")
-f2ab.pack(side=RIGHT)
+# f2aa = Frame(f2a, width = 450, height=330,bd=14, relief="raise")
+# f2aa.pack(side=LEFT)
+# f2ab = Frame(f2a, width = 450, height=330,bd=14, relief="raise")
+# f2ab.pack(side=RIGHT)
 
 Tops.configure(background='#5F755E')
 f1.configure(background='#5F755E')
@@ -53,7 +44,7 @@ f2.configure(background='#5F755E')
 
 #==================================================================HEADING==========================================================================
 
-lblInfo = Label(Tops, font=('arial',60,'bold'), text= " Cafe Management System ", bd=10)
+lblInfo = Label(Tops, font=('arial',60,'bold'), text= " Mocha Tree ", bd=10)
 lblInfo.grid(row=0,column=0)
 
 #===================================================================COST OF ITEMS=============================================================
@@ -257,7 +248,8 @@ def Reset():
     txtChocolava.configure(state=DISABLED)
     txtBread_cake.configure(state=DISABLED)
 #======================================================================RECEIPT============================================================================
-
+def goback():
+    root.destroy()
 def Receipt():
     a1 = int(E_Latta.get())
     a2 = int(E_Coke.get())
@@ -590,38 +582,38 @@ txtReceipt.grid(row=1,column=0)
 
 #=========================================================ITEM COST INFORMATION=============================================================================
 
-lblCostofDrinks=Label(f2aa,font=('arial',16,'bold'),text="Cost of Drinks",bd=8)
-lblCostofDrinks.grid(row=2,column=0,sticky=W)
-txtCostofDrinks=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=CostofDrinks)
-txtCostofDrinks.grid(row=2,column=1)
+# lblCostofDrinks=Label(f2aa,font=('arial',16,'bold'),text="Cost of Drinks",bd=8)
+# lblCostofDrinks.grid(row=2,column=0,sticky=W)
+# txtCostofDrinks=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=CostofDrinks)
+# txtCostofDrinks.grid(row=2,column=1)
 
-lblCostofCakes=Label(f2aa,font=('arial',16,'bold'),text="Cost of Cakes",bd=8)
-lblCostofCakes.grid(row=3,column=0,sticky=W)
-txtCostofCakes=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=CostofCakes)
-txtCostofCakes.grid(row=3,column=1)
+# lblCostofCakes=Label(f2aa,font=('arial',16,'bold'),text="Cost of Cakes",bd=8)
+# lblCostofCakes.grid(row=3,column=0,sticky=W)
+# txtCostofCakes=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=CostofCakes)
+# txtCostofCakes.grid(row=3,column=1)
 
-lblServiceCharge=Label(f2aa,font=('arial',16,'bold'),text="Service Charge",bd=8)
-lblServiceCharge.grid(row=4,column=0,sticky=W)
-txtServiceCharge=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left')
-txtServiceCharge.grid(row=4,column=1)
+# lblServiceCharge=Label(f2aa,font=('arial',16,'bold'),text="Service Charge",bd=8)
+# lblServiceCharge.grid(row=4,column=0,sticky=W)
+# txtServiceCharge=Entry(f2aa,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left')
+# txtServiceCharge.grid(row=4,column=1)
 
 
 #=========================================================PAYMENT INFORMATION===============================================================================
 
-lblPaidTax=Label(f2ab,font=('arial',16,'bold'),text="Tax paid",bd=8)
-lblPaidTax.grid(row=2,column=0,sticky=W)
-txtPaidTax=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=PaidTax)
-txtPaidTax.grid(row=2,column=1,sticky=W)
+# lblPaidTax=Label(f2ab,font=('arial',16,'bold'),text="Tax paid",bd=8)
+# lblPaidTax.grid(row=2,column=0,sticky=W)
+# txtPaidTax=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=PaidTax)
+# txtPaidTax.grid(row=2,column=1,sticky=W)
 
-lblSubTotal=Label(f2ab,font=('arial',16,'bold'),text="Sub Total",bd=8)
-lblSubTotal.grid(row=3,column=0,sticky=W)
-txtSubTotal=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=SubTotal)
-txtSubTotal.grid(row=3,column=1,sticky=W)
+# lblSubTotal=Label(f2ab,font=('arial',16,'bold'),text="Sub Total",bd=8)
+# lblSubTotal.grid(row=3,column=0,sticky=W)
+# txtSubTotal=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=SubTotal)
+# txtSubTotal.grid(row=3,column=1,sticky=W)
 
-lblTotalCost=Label(f2ab,font=('arial',16,'bold'),text="Total Cost",bd=8)
-lblTotalCost.grid(row=4,column=0,sticky=W)
-txtTotalCost=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=TotalCost)
-txtTotalCost.grid(row=4,column=1,sticky=W)
+# lblTotalCost=Label(f2ab,font=('arial',16,'bold'),text="Total Cost",bd=8)
+# lblTotalCost.grid(row=4,column=0,sticky=W)
+# txtTotalCost=Entry(f2ab,font=('arial',16,'bold'),bd=8,insertwidth=2,justify='left',textvariable=TotalCost)
+# txtTotalCost.grid(row=4,column=1,sticky=W)
 
 #============================================================BUTTONS=============================================================================================
 
@@ -631,7 +623,7 @@ btnTotal=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),widt
 
 btnReset=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Reset",command=Reset).grid(row=0,column=2)
 
-btnExit=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Exit",command=Stats).grid(row=0,column=3)
+btnExit=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Exit",command=goback).grid(row=0,column=3)
 
 
 
