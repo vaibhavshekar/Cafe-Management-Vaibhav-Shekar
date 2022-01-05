@@ -54,19 +54,123 @@ f2.configure(background='#5F755E')
 lblInfo = Label(Tops, font=('arial',60,'bold'), text= " Mocha Tree ", bd=10)
 lblInfo.grid(row=0,column=0)
 
+#==========================================================VARIABLES===============================================================================
+var1= IntVar()
+var2= IntVar()
+var3= IntVar()
+var4= IntVar()
+var5= IntVar()
+var6= IntVar()
+var7= IntVar()
+var8= IntVar()
+var9= IntVar()
+var10= IntVar()
+var11= IntVar()
+var12= IntVar()
+var13= IntVar()
+var14= IntVar()
+var15= IntVar()
+var16= IntVar()
+var17 = IntVar()
+var18 = IntVar()
+var19 = IntVar()
+var20 = IntVar()
+
+DateofOrder=StringVar()
+Receipt_Ref=StringVar()
+PaidTax=StringVar()
+SubTotal=StringVar()
+TotalCost=StringVar()
+CostofCakes=StringVar()
+CostofDrinks=StringVar()
+ServiceCharge=StringVar()
+
+
+E_cappuccino=StringVar()
+E_americano=StringVar()
+E_Cold_Brew=StringVar()
+E_CCMff=StringVar()
+E_Sr_Smoothie=StringVar()
+E_SOF=StringVar()
+E_COF=StringVar()
+E_DCF=StringVar()
+
+E_Cold_Brew_FV=StringVar()
+E_CheeseCake=StringVar()
+E_HotChoc=StringVar()
+E_Waffels=StringVar()
+E_MDShake=StringVar()
+E_ButterBeer=StringVar()
+E_MochaFrappe=StringVar()
+E_Latte=StringVar()
+
+E_Menu_Of_Day1 = StringVar()
+E_Menu_Of_Day2 = StringVar()
+E_Season_Special_1 = StringVar()
+E_Season_Special_2 = StringVar()
+
+E_cappuccino.set("0")
+E_americano.set("0")
+E_Cold_Brew.set("0")
+E_CCMff.set("0")
+E_Sr_Smoothie.set("0")
+E_SOF.set("0")
+E_COF.set("0")
+E_DCF.set("0")
+
+E_Cold_Brew_FV.set("0")
+E_CheeseCake.set("0")
+E_HotChoc.set("0")
+E_Waffels.set("0")
+E_MDShake.set("0")
+E_ButterBeer.set("0")
+E_MochaFrappe.set("0")
+E_Latte.set("0")
+
+E_Menu_Of_Day1.set('0')
+E_Menu_Of_Day2.set('0')
+E_Season_Special_1.set('0')
+E_Season_Special_2.set('0')
+
+DateofOrder.set(time.strftime("%d/%m/%y"))
+
+
 #===================================================================COST OF ITEMS=============================================================
 
 def CostofItems():
+
+    Cost1=125
+    Cost2=120
+    Cost3=110
+    Cost4=70
+    Cost5=140
+    Cost6=150
+    Cost7=160
+    Cost8=155
+    Cost9=120
+    Cost10=85
+    Cost11=90
+    Cost12=150
+    Cost13=145
+    Cost14=180
+    Cost15=135
+    Cost16=125
+    Cost17 = 140
+    Cost18 = 140
+    Cost19 = 150
+    Cost20 = 150
+    
+    
     Item1=float(E_cappuccino.get())
     Item2=float(E_americano.get())
     Item3=float(E_Cold_Brew.get())
-    Item4=float(E_Cold_Brew_FV.get())
-    Item5=float(E_Cappuccin.get())
+    Item4=float(E_CCMff.get())
+    Item5=float(E_Sr_Smoothie.get())
     Item6=float(E_SOF.get()) 
     Item7=float(E_COF.get())
     Item8=float(E_DCF.get())
     
-    Item9=float(E_Cold_Brew_FV_cake.get()) 
+    Item9=float(E_Cold_Brew_FV.get()) 
     Item10=float(E_CheeseCake.get())
     Item11=float(E_HotChoc.get())
     Item12=float(E_Waffels.get())
@@ -79,40 +183,30 @@ def CostofItems():
     Item19 = float(E_Season_Special_1.get())
     Item20 = float(E_Season_Special_2.get())
 
-    PriceofDrinks = (Item1 * 12) + (Item2 * 25.5) + (Item3 * 24.99) + (Item4 * 10.29) + (Item5 * 20.20) + (Item6 * 5.9) + (Item7 * 12.99) + (Item8 * 55.45) + (Item17 * 70) + (Item18 * 70) + (Item19 * 90) + (Item20 * 90)
+    Price = (Item1 * Cost1) + (Item2 * Cost2) + (Item3 * Cost3) + (Item4 * Cost4) + (Item5 * Cost5) + (Item6 * Cost6) + (Item7 * Cost7) + (Item8 * Cost8) + (Item17 * Cost17) + (Item18 * Cost18) + (Item19 * Cost19) + (Item20 * Cost20)+ (Item9 * Cost9) + (Item10 * Cost10) + (Item11 * Cost11) + (Item12 * Cost12) + (Item13 * Cost13) + (Item14 * Cost14) + (Item15 * Cost15) + (Item16 * Cost16)
 
-    PriceofCakes = (Item9 * 12.2) + (Item10 * 15.99) + (Item11 * 40.99) + (Item12 * 22.29) + (Item13 * 25.20) + (Item14 * 30.9) + (Item15 * 35.99) + (Item16 * 40.45)
-
-    DrinksPrice ="Rs", str ('%.2f'%(PriceofDrinks))
-
-    CakesPrice ="Rs", str ('%.2f'%(PriceofCakes))
-
-    CostofCakes.set(CakesPrice)
-
-    CostofDrinks.set(DrinksPrice)
-
-    SC= "Rs" , str('%.2f'%(1.59))
+    SC= "Rs" , str(0.04 * Price)
     ServiceCharge.set(SC)
 
-    SubTotalofITEMS = "Rs" , str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59))
+    SubTotalofITEMS = "Rs" , str(Price+(0.04 * Price))
     SubTotal.set(SubTotalofITEMS)
 
-    Tax= "Rs" , str('%.2f'%((PriceofDrinks + PriceofCakes + 1.59)* 0.15))
+    Tax= "Rs" , str(0.11 * Price)
     PaidTax.set(Tax)
 
-    TT = ((PriceofDrinks + PriceofCakes + 1.59)*0.15)
-    TC = "Rs" , str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59 + TT))
+    #TT = ((PriceofDrinks + PriceofCakes + 1.59)*0.15)
+    TC = "Rs" , str(Price + (0.04 * Price) + (0.11 * Price))
     TotalCost.set(TC)
     
     a1 = int(E_cappuccino.get())
     a2 = int(E_americano.get())
     a3 = int(E_Cold_Brew.get())
-    a4 = int(E_Cold_Brew_FV.get())
-    a5 = int(E_Cappuccin.get())
+    a4 = int(E_CCMff.get())
+    a5 = int(E_Sr_Smoothie.get())
     a6 = int(E_SOF.get())
     a7 =int(E_COF.get())
     a8 =int(E_DCF.get())
-    a9 =int(E_Cold_Brew_FV_cake.get())
+    a9 =int(E_Cold_Brew_FV.get())
     a10 =int(E_CheeseCake.get())
     a11 =int(E_HotChoc.get())
     a12 =int(E_Waffels.get())
@@ -132,67 +226,67 @@ def CostofItems():
 
     txtReceipt.insert(END,'Receipt Ref:\t\t\t'+Receipt_Ref.get() + '\t\t'+ DateofOrder.get()+"\n")
     txtReceipt.insert(END,'===============================================\n'+
-                      'Items\t\t'+'Rate\t\t'+"Count of Items \n"+
+                      'Items\t\t'+'\tRate\t\t'+"Count of Items \n"+
                       '-------------------------------------------------------------------------------------\n')
     while a1 > 0:  
-        txtReceipt.insert(END,'Latta:\t\t\t\t'+ E_cappuccino.get()+"\n")
+        txtReceipt.insert(END,'Cappuccino:\t\t\t'+ str(Cost1) +'\t\t\t' + E_cappuccino.get()+"\n")
         break
     while a2 > 0:        
-        txtReceipt.insert(END,'Americano:\t\t\t\t'+ E_americano.get()+"\n")
+        txtReceipt.insert(END,'Americano:\t\t\t'+ str(Cost2) +'\t\t\t' + E_americano.get()+"\n")
         break
     while a3 > 0:        
-        txtReceipt.insert(END,'Cold Brew:\t\t\t\t'+ E_Cold_Brew.get()+"\n")
+        txtReceipt.insert(END,'Cold Brew:\t\t\t'+ str(Cost3) +'\t\t\t' + E_Cold_Brew.get()+"\n")
         break
     while a4 > 0:     
-        txtReceipt.insert(END,'Coffee:\t\t\t\t'+ E_Cold_Brew_FV.get()+"\n")
+        txtReceipt.insert(END,'Chocochip Muffin:\t\t\t'+ str(Cost4) +'\t\t\t' + E_CCMff.get()+"\n")
         break
     while a5 > 0:      
-        txtReceipt.insert(END,'Cappuccin:\t\t\t\t'+ E_Cappuccin.get()+"\n")
+        txtReceipt.insert(END,'Strawberry Smoothie:\t\t\t'+ str(Cost5) +'\t\t\t' + E_Sr_Smoothie.get()+"\n")
         break
     while a6 > 0:
-        txtReceipt.insert(END,'Tea:\t\t\t\t'+ E_SOF.get()+"\n")
+        txtReceipt.insert(END,'Sr oreo Frappe:\t\t\t'+ str(Cost6) +'\t\t\t' + E_SOF.get()+"\n")
         break
     while a7 > 0:
-        txtReceipt.insert(END,'Cold_coffee:\t\t\t\t'+ E_COF.get()+"\n")
+        txtReceipt.insert(END,'Cr Oreo Frappe:\t\t\t'+ str(Cost7) +'\t\t\t' + E_COF.get()+"\n")
         break
     while a8 > 0:        
-        txtReceipt.insert(END,'Beer:\t\t\t\t'+ E_DCF.get()+"\n")
+        txtReceipt.insert(END,'Double Ch Fr:\t\t\t'+ str(Cost8) +'\t\t\t' + E_DCF.get()+"\n")
         break
     while a9 > 0:
-        txtReceipt.insert(END,'ColdBrewFV:\t\t\t\t'+ E_Cold_Brew_FV_cake.get()+"\n")
+        txtReceipt.insert(END,'ColdBrewFV:\t\t\t'+ str(Cost9) +'\t\t\t' + E_Cold_Brew_FV.get()+"\n")
         break
     while a10 > 0:
-        txtReceipt.insert(END,'CheeseCake:\t\t\t\t'+ E_CheeseCake.get()+"\n")
+        txtReceipt.insert(END,'CheeseCake:\t\t\t'+ str(Cost10) +'\t\t\t' + E_CheeseCake.get()+"\n")
         break
     while a11 > 0:
-        txtReceipt.insert(END,'Hot Chocolate:\t\t\t\t'+ E_HotChoc.get()+"\n")
+        txtReceipt.insert(END,'Hot Chocolate:\t\t\t'+ str(Cost11) +'\t\t\t' + E_HotChoc.get()+"\n")
         break
     while a12 > 0:
-        txtReceipt.insert(END,'Waffels:\t\t\t\t'+E_Waffels.get()+"\n")
+        txtReceipt.insert(END,'Waffels:\t\t\t'+ str(Cost12) +'\t\t\t' +E_Waffels.get()+"\n")
         break
     while a13 > 0:
-        txtReceipt.insert(END,'MUDPieShake:\t\t\t\t'+ E_MDShake.get()+"\n")
+        txtReceipt.insert(END,'MUDPieShake:\t\t\t'+ str(Cost13) +'\t\t\t' + E_MDShake.get()+"\n")
         break
     while a14 > 0:
-        txtReceipt.insert(END,'ButterBeer:\t\t\t\t'+ E_ButterBeer.get()+"\n")
+        txtReceipt.insert(END,'ButterBeer:\t\t\t'+ str(Cost14) +'\t\t\t' + E_ButterBeer.get()+"\n")
         break
     while a15 > 0:
-        txtReceipt.insert(END,'MochaFrappe:\t\t\t\t'+ E_MochaFrappe.get()+"\n")
+        txtReceipt.insert(END,'MochaFrappe:\t\t\t'+ str(Cost15) +'\t\t\t' + E_MochaFrappe.get()+"\n")
         break
     while a16 > 0:
-        txtReceipt.insert(END,'Latte:\t\t\t\t'+ E_Latte.get()+"\n")
+        txtReceipt.insert(END,'Latte:\t\t\t'+ str(Cost16) +'\t\t\t' + E_Latte.get()+"\n")
         break
     while a17 > 0:
-        txtReceipt.insert(END,'Menu_Of_Day_1:\t\t\t\t'+ E_Menu_Of_Day1.get()+"\n")
+        txtReceipt.insert(END,'Menu_Of_Day_1:\t\t\t'+ str(Cost17) +'\t\t\t' + E_Menu_Of_Day1.get()+"\n")
         break
     while a18 > 0:
-        txtReceipt.insert(END,'Menu_Of_Day_2:\t\t\t\t'+ E_Menu_Of_Day2.get()+"\n")
+        txtReceipt.insert(END,'Menu_Of_Day_2:\t\t\t'+ str(Cost18) +'\t\t\t' + E_Menu_Of_Day2.get()+"\n")
         break
     while a19 > 0:
-        txtReceipt.insert(END,'Season_Special_1:\t\t\t\t'+ E_Season_Special_1.get()+"\n")
+        txtReceipt.insert(END,'Season_Special_1:\t\t\t'+ str(Cost19) +'\t\t\t' + E_Season_Special_1.get()+"\n")
         break
     while a20 > 0:
-        txtReceipt.insert(END,'Season_Special_2:\t\t\t\t'+ E_Season_Special_2.get()+"\n")
+        txtReceipt.insert(END,'Season_Special_2:\t\t\t' + str(Cost20) +'\t\t\t' + E_Season_Special_2.get()+"\n")
         break
     
     txtReceipt.insert(END,'\n===============================================\n' + 'Tax Paid:\t\t' + PaidTax.get() +"\n")
@@ -226,13 +320,13 @@ def Reset():
     E_cappuccino.set("0")
     E_americano.set("0")
     E_Cold_Brew.set("0")
-    E_Cold_Brew_FV.set("0")
-    E_Cappuccin.set("0")
+    E_CCMff.set("0")
+    E_Sr_Smoothie.set("0")
     E_SOF.set("0")
     E_COF.set("0")
     E_DCF.set("0")
 
-    E_Cold_Brew_FV_cake.set("0")
+    E_Cold_Brew_FV.set("0")
     E_CheeseCake.set("0")
     E_HotChoc.set("0")
     E_Waffels.set("0")
@@ -271,12 +365,12 @@ def Reset():
     txtcappuccino.configure(state=DISABLED)
     txtamericano.configure(state=DISABLED)
     txtCold_Brew.configure(state=DISABLED)
-    txtCold_Brew_FV.configure(state=DISABLED)
-    txtCappuccin.configure(state=DISABLED)
+    txtCCMff.configure(state=DISABLED)
+    txtSr_Smoothie.configure(state=DISABLED)
     txtSOF.configure(state=DISABLED)
     txtCOF.configure(state=DISABLED)
     txtDCF.configure(state=DISABLED)
-    txtCold_Brew_FV_cake.configure(state=DISABLED)
+    txtCold_Brew_FV.configure(state=DISABLED)
     txtCheeseCake.configure(state=DISABLED)
     txtHotChoc.configure(state=DISABLED)
     txtWaffels.configure(state=DISABLED)
@@ -316,10 +410,10 @@ def chkbutton_value():
             txtCold_Brew_FV.configure(state=DISABLED)
             E_Cold_Brew_FV.set("0")
     if (var5.get() == 1):
-        txtCappuccin.configure(state=NORMAL)
+        txtSr_Smoothie.configure(state=NORMAL)
     elif var5.get()== 0:
-            txtCappuccin.configure(state=DISABLED)
-            E_Cappuccin.set("0")
+            txtSr_Smoothie.configure(state=DISABLED)
+            E_Sr_Smoothie.set("0")
     if (var6.get() == 1):
         txtSOF.configure(state=NORMAL)
     elif var6.get()== 0:
@@ -397,85 +491,6 @@ def chkbutton_value():
             E_Season_Special_2.set("0")
   
 	
-#==========================================================VARIABLES===============================================================================
-var1= IntVar()
-var2= IntVar()
-var3= IntVar()
-var4= IntVar()
-var5= IntVar()
-var6= IntVar()
-var7= IntVar()
-var8= IntVar()
-var9= IntVar()
-var10= IntVar()
-var11= IntVar()
-var12= IntVar()
-var13= IntVar()
-var14= IntVar()
-var15= IntVar()
-var16= IntVar()
-var17 = IntVar()
-var18 = IntVar()
-var19 = IntVar()
-var20 = IntVar()
-
-DateofOrder=StringVar()
-Receipt_Ref=StringVar()
-PaidTax=StringVar()
-SubTotal=StringVar()
-TotalCost=StringVar()
-CostofCakes=StringVar()
-CostofDrinks=StringVar()
-ServiceCharge=StringVar()
-
-
-E_cappuccino=StringVar()
-E_americano=StringVar()
-E_Cold_Brew=StringVar()
-E_Cold_Brew_FV=StringVar()
-E_Cappuccin=StringVar()
-E_SOF=StringVar()
-E_COF=StringVar()
-E_DCF=StringVar()
-
-E_Cold_Brew_FV_cake=StringVar()
-E_CheeseCake=StringVar()
-E_HotChoc=StringVar()
-E_Waffels=StringVar()
-E_MDShake=StringVar()
-E_ButterBeer=StringVar()
-E_MochaFrappe=StringVar()
-E_Latte=StringVar()
-
-E_Menu_Of_Day1 = StringVar()
-E_Menu_Of_Day2 = StringVar()
-E_Season_Special_1 = StringVar()
-E_Season_Special_2 = StringVar()
-
-E_cappuccino.set("0")
-E_americano.set("0")
-E_Cold_Brew.set("0")
-E_Cold_Brew_FV.set("0")
-E_Cappuccin.set("0")
-E_SOF.set("0")
-E_COF.set("0")
-E_DCF.set("0")
-
-E_Cold_Brew_FV_cake.set("0")
-E_CheeseCake.set("0")
-E_HotChoc.set("0")
-E_Waffels.set("0")
-E_MDShake.set("0")
-E_ButterBeer.set("0")
-E_MochaFrappe.set("0")
-E_Latte.set("0")
-
-E_Menu_Of_Day1.set('0')
-E_Menu_Of_Day2.set('0')
-E_Season_Special_1.set('0')
-E_Season_Special_2.set('0')
-
-DateofOrder.set(time.strftime("%d/%m/%y"))
 
 #=================================================DRINKS===================================================================================================================
 
@@ -485,9 +500,9 @@ Americano = Checkbutton(f1aa, text="  Americano\t\t", variable=var2, onvalue=1, 
 
 Cold_Brew = Checkbutton(f1aa, text="  Cold Brew\t\t", variable=var3, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=2,sticky=W)
 
-Cold_Brew_FV = Checkbutton(f1aa, text="  Cold Brew FV\t\t", variable=var4, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
+Cold_Brew_FV = Checkbutton(f1aa, text="  CC Muffin\t\t", variable=var4, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
 
-Cappuccino = Checkbutton(f1aa, text="  Cappuccino\t\t", variable=var5, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
+Sr_Smoothie = Checkbutton(f1aa, text="  Strawberry Smoothie\t\t", variable=var5, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
 
 SOF = Checkbutton(f1aa, text="  Straberry Oreo Fr\t\t", variable=var6, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=5,sticky=W)
 
@@ -534,11 +549,11 @@ txtamericano.grid(row=1,column=1)
 txtCold_Brew = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew,state=DISABLED)
 txtCold_Brew.grid(row=2,column=1)
 
-txtCold_Brew_FV = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew_FV,state=DISABLED)
+txtCold_Brew_FV = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_CCMff,state=DISABLED)
 txtCold_Brew_FV.grid(row=3,column=1)
 
-txtCappuccin = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cappuccin,state=DISABLED)
-txtCappuccin.grid(row=4,column=1)
+txtSr_Smoothie = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Sr_Smoothie,state=DISABLED)
+txtSr_Smoothie.grid(row=4,column=1)
 
 txtSOF = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_SOF,state=DISABLED)
 txtSOF.grid(row=5,column=1)
@@ -559,7 +574,7 @@ txtSp2.grid(row=9,column=1)
 
 #=====================================================ENTER WIDGE CAKES========================================================================================
 
-txtCold_Brew_FV_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew_FV_cake,state=DISABLED)
+txtCold_Brew_FV_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew_FV,state=DISABLED)
 txtCold_Brew_FV_cake.grid(row=0,column=1)
 
 txtCheeseCake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_CheeseCake,state=DISABLED)
