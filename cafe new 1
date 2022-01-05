@@ -162,7 +162,7 @@ E_Menu_Of_Day1.set('0')
 E_Menu_Of_Day2.set('0')
 E_Season_Special_1.set('0')
 E_Season_Special_2.set('0')
-
+bi = "D:/"
 DateofOrder.set(time.strftime("%d/%m/%y"))
 
 
@@ -213,7 +213,10 @@ def CostofItems():
     Item18 = float(E_Menu_Of_Day2.get())
     Item19 = float(E_Season_Special_1.get())
     Item20 = float(E_Season_Special_2.get())
-    
+    binm = str(customerName.get())
+    bilc = str(customerContact.get())
+    b = ""
+    b = bi + binm + ".csv"    
     orderlist=[Item1,Item2,Item3,Item4,Item5,Item6,Item7,Item8,Item9,Item10,Item11,Item12,Item13,Item14,Item15,Item16,Item17,Item18,Item19,Item20]
     ST=0
     for i in range(20):
@@ -224,7 +227,7 @@ def CostofItems():
     billdf["Quantity"]=orderlist
     billdf["Rate"]=pricelist
     billdf["IndividualCost"]=bilist
-    billdf.to_csv("D:/hs.csv")
+    billdf.to_csv(b)
 
     Price = (Item1 * Cost1) + (Item2 * Cost2) + (Item3 * Cost3) + (Item4 * Cost4) + (Item5 * Cost5) + (Item6 * Cost6) + (Item7 * Cost7) + (Item8 * Cost8) + (Item17 * Cost17) + (Item18 * Cost18) + (Item19 * Cost19) + (Item20 * Cost20)+ (Item9 * Cost9) + (Item10 * Cost10) + (Item11 * Cost11) + (Item12 * Cost12) + (Item13 * Cost13) + (Item14 * Cost14) + (Item15 * Cost15) + (Item16 * Cost16)
 
