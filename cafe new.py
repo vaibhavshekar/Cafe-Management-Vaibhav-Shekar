@@ -430,10 +430,10 @@ def chkbutton_value():
             txtDCF.configure(state=DISABLED)
             E_DCF.set("0")
     if (var9.get() == 1):
-        txtCold_Brew_FV_cake.configure(state=NORMAL)
+        txtCold_Brew_FV.configure(state=NORMAL)
     elif var9.get()== 0:
             txtCold_Brew_FV_cake.configure(state=DISABLED)
-            E_Cold_Brew_FV_cake.set("0")
+            E_Cold_Brew_FV.set("0")
     if (var10.get() == 1):
         txtCheeseCake.configure(state=NORMAL)
     elif var10.get()== 0:
