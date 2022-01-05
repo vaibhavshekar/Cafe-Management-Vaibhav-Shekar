@@ -646,6 +646,9 @@ lblReceipt = Label(ft2,font=('arial',16,'bold'),text="Get Receipt:",bd=2,anchor=
 lblReceipt.grid(row=0,column=0,sticky=W)
 txtReceipt = Text(ft2,font=('arial',11,'bold'),bd=8,width=59,height=22,bg="white")
 txtReceipt.grid(row=1,column=0)
+#======================================================================Search============================================================================
+def srchb():
+    execfile("C:/Users/Hiten Dhore/OneDrive/Desktop/ip/FP/seachfil.py")
 
 #============================================================BUTTONS=============================================================================================
 
@@ -655,7 +658,9 @@ btnTotal=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),widt
 
 btnReset=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Reset",command=Reset).grid(row=0,column=2)
 
-btnExit=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Exit",command=goback).grid(row=0,column=3)
+btnSearch=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Search",command=srchb).grid(row=0,column=3)
+
+btnExit=Button(fb2,padx=16,pady=1,bd=4,fg="black",font=('arial',16,'bold'),width=5,text="Exit",command=goback).grid(row=0,column=4)
 
 
 
