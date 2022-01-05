@@ -19,24 +19,24 @@ root.attributes('-fullscreen', True)
 Tops = Frame(root, width=1350,height=100,bd=14, relief="raise")
 Tops.pack(side=TOP)
 
-f1 = Frame(root, width=900,height=750,bd=8, relief="raise")
+f1 = Frame(root, width=700,height=750,bd=8, relief="raise")
 f1.pack(side=LEFT)
-f2 = Frame(root, width=440,height=750,bd=8, relief="raise")
+f2 = Frame(root, width=340,height=750,bd=8, relief="raise")
 f2.pack(side=RIGHT)
 
-ft2 = Frame(f2, width=440,height=450,bd=12, relief="raise")
+ft2 = Frame(f2, width=340,height=450,bd=12, relief="raise")
 ft2.pack(side=TOP)
-fb2 = Frame(f2, width=440,height=250,bd=16, relief="raise")
+fb2 = Frame(f2, width=340,height=250,bd=16, relief="raise")
 fb2.pack(side=BOTTOM)
 
-f1a = Frame(f1, width=900,height=430,bd=8, relief="raise")
+f1a = Frame(f1, width=700,height=430,bd=8, relief="raise")
 f1a.pack(side=TOP)
 # f2a = Frame(f1, width=900,height=320,bd=6, relief="raise")
 # f2a.pack(side=BOTTOM)
 
-f1aa = Frame(f1a, width = 400, height=630,bd=16, relief="raise")
+f1aa = Frame(f1a, width = 300, height=630,bd=16, relief="raise")
 f1aa.pack(side=LEFT)
-f1ab = Frame(f1a, width = 400, height=630,bd=16, relief="raise")
+f1ab = Frame(f1a, width = 300, height=630,bd=16, relief="raise")
 f1ab.pack(side=RIGHT)
 
 
@@ -57,23 +57,23 @@ lblInfo.grid(row=0,column=0)
 #===================================================================COST OF ITEMS=============================================================
 
 def CostofItems():
-    Item1=float(E_Latta.get())
-    Item2=float(E_Coke.get())
-    Item3=float(E_Iced_Latta.get())
-    Item4=float(E_Coffee.get())
+    Item1=float(E_cappuccino.get())
+    Item2=float(E_americano.get())
+    Item3=float(E_Cold_Brew.get())
+    Item4=float(E_Cold_Brew_FV.get())
     Item5=float(E_Cappuccin.get())
-    Item6=float(E_Tea.get()) 
-    Item7=float(E_Cold_coffee.get())
-    Item8=float(E_Beer.get())
+    Item6=float(E_SOF.get()) 
+    Item7=float(E_COF.get())
+    Item8=float(E_DCF.get())
     
-    Item9=float(E_Coffee_cake.get()) 
-    Item10=float(E_Black_forest.get())
-    Item11=float(E_Cream_cake.get())
-    Item12=float(E_Lagoos_cake.get())
-    Item13=float(E_Fruit_cake.get())
-    Item14=float(E_Chocolate_cake.get())
-    Item15=float(E_Chocolava.get())
-    Item16=float(E_Bread_cake.get())
+    Item9=float(E_Cold_Brew_FV_cake.get()) 
+    Item10=float(E_CheeseCake.get())
+    Item11=float(E_HotChoc.get())
+    Item12=float(E_Waffels.get())
+    Item13=float(E_MDShake.get())
+    Item14=float(E_ButterBeer.get())
+    Item15=float(E_MochaFrappe.get())
+    Item16=float(E_Latte.get())
     Item17 = float(E_Menu_Of_Day1.get())
     Item18 = float(E_Menu_Of_Day2.get())
     Item19 = float(E_Season_Special_1.get())
@@ -104,22 +104,22 @@ def CostofItems():
     TC = "Rs" , str('%.2f'%(PriceofDrinks + PriceofCakes + 1.59 + TT))
     TotalCost.set(TC)
     
-    a1 = int(E_Latta.get())
-    a2 = int(E_Coke.get())
-    a3 = int(E_Iced_Latta.get())
-    a4 = int(E_Coffee.get())
+    a1 = int(E_cappuccino.get())
+    a2 = int(E_americano.get())
+    a3 = int(E_Cold_Brew.get())
+    a4 = int(E_Cold_Brew_FV.get())
     a5 = int(E_Cappuccin.get())
-    a6 = int(E_Tea.get())
-    a7 =int(E_Cold_coffee.get())
-    a8 =int(E_Beer.get())
-    a9 =int(E_Coffee_cake.get())
-    a10 =int(E_Black_forest.get())
-    a11 =int(E_Cream_cake.get())
-    a12 =int(E_Lagoos_cake.get())
-    a13 =int(E_Fruit_cake.get())
-    a14 =int(E_Chocolate_cake.get())
-    a15 =int(E_Chocolava.get())
-    a16 =int(E_Bread_cake.get())
+    a6 = int(E_SOF.get())
+    a7 =int(E_COF.get())
+    a8 =int(E_DCF.get())
+    a9 =int(E_Cold_Brew_FV_cake.get())
+    a10 =int(E_CheeseCake.get())
+    a11 =int(E_HotChoc.get())
+    a12 =int(E_Waffels.get())
+    a13 =int(E_MDShake.get())
+    a14 =int(E_ButterBeer.get())
+    a15 =int(E_MochaFrappe.get())
+    a16 =int(E_Latte.get())
     a17 =int(E_Menu_Of_Day1.get())
     a18 =int(E_Menu_Of_Day2.get())
     a19 =int(E_Season_Special_1.get())
@@ -132,55 +132,55 @@ def CostofItems():
 
     txtReceipt.insert(END,'Receipt Ref:\t\t\t'+Receipt_Ref.get() + '\t\t'+ DateofOrder.get()+"\n")
     txtReceipt.insert(END,'===============================================\n'+
-                      'Items\t\t\t'+"Count of Items \n"+
+                      'Items\t\t'+'Rate\t\t'+"Count of Items \n"+
                       '-------------------------------------------------------------------------------------\n')
     while a1 > 0:  
-        txtReceipt.insert(END,'Latta:\t\t\t\t'+ E_Latta.get()+"\n")
+        txtReceipt.insert(END,'Latta:\t\t\t\t'+ E_cappuccino.get()+"\n")
         break
     while a2 > 0:        
-        txtReceipt.insert(END,'Coke:\t\t\t\t'+ E_Coke.get()+"\n")
+        txtReceipt.insert(END,'Americano:\t\t\t\t'+ E_americano.get()+"\n")
         break
     while a3 > 0:        
-        txtReceipt.insert(END,'Iced_Latta:\t\t\t\t'+ E_Iced_Latta.get()+"\n")
+        txtReceipt.insert(END,'Cold Brew:\t\t\t\t'+ E_Cold_Brew.get()+"\n")
         break
     while a4 > 0:     
-        txtReceipt.insert(END,'Coffee:\t\t\t\t'+ E_Coffee.get()+"\n")
+        txtReceipt.insert(END,'Coffee:\t\t\t\t'+ E_Cold_Brew_FV.get()+"\n")
         break
     while a5 > 0:      
         txtReceipt.insert(END,'Cappuccin:\t\t\t\t'+ E_Cappuccin.get()+"\n")
         break
     while a6 > 0:
-        txtReceipt.insert(END,'Tea:\t\t\t\t'+ E_Tea.get()+"\n")
+        txtReceipt.insert(END,'Tea:\t\t\t\t'+ E_SOF.get()+"\n")
         break
     while a7 > 0:
-        txtReceipt.insert(END,'Cold_coffee:\t\t\t\t'+ E_Cold_coffee.get()+"\n")
+        txtReceipt.insert(END,'Cold_coffee:\t\t\t\t'+ E_COF.get()+"\n")
         break
     while a8 > 0:        
-        txtReceipt.insert(END,'Beer:\t\t\t\t'+ E_Beer.get()+"\n")
+        txtReceipt.insert(END,'Beer:\t\t\t\t'+ E_DCF.get()+"\n")
         break
     while a9 > 0:
-        txtReceipt.insert(END,'Coffee_cake:\t\t\t\t'+ E_Coffee_cake.get()+"\n")
+        txtReceipt.insert(END,'ColdBrewFV:\t\t\t\t'+ E_Cold_Brew_FV_cake.get()+"\n")
         break
     while a10 > 0:
-        txtReceipt.insert(END,'Black_forest:\t\t\t\t'+ E_Black_forest.get()+"\n")
+        txtReceipt.insert(END,'CheeseCake:\t\t\t\t'+ E_CheeseCake.get()+"\n")
         break
     while a11 > 0:
-        txtReceipt.insert(END,'Cream_cake:\t\t\t\t'+ E_Cream_cake.get()+"\n")
+        txtReceipt.insert(END,'Hot Chocolate:\t\t\t\t'+ E_HotChoc.get()+"\n")
         break
     while a12 > 0:
-        txtReceipt.insert(END,'Lagoos_cake:\t\t\t\t'+E_Lagoos_cake.get()+"\n")
+        txtReceipt.insert(END,'Waffels:\t\t\t\t'+E_Waffels.get()+"\n")
         break
     while a13 > 0:
-        txtReceipt.insert(END,'Fruit_cake:\t\t\t\t'+ E_Fruit_cake.get()+"\n")
+        txtReceipt.insert(END,'MUDPieShake:\t\t\t\t'+ E_MDShake.get()+"\n")
         break
     while a14 > 0:
-        txtReceipt.insert(END,'Chocolate_cake:\t\t\t\t'+ E_Chocolate_cake.get()+"\n")
+        txtReceipt.insert(END,'ButterBeer:\t\t\t\t'+ E_ButterBeer.get()+"\n")
         break
     while a15 > 0:
-        txtReceipt.insert(END,'Chocolava:\t\t\t\t'+ E_Chocolava.get()+"\n")
+        txtReceipt.insert(END,'MochaFrappe:\t\t\t\t'+ E_MochaFrappe.get()+"\n")
         break
     while a16 > 0:
-        txtReceipt.insert(END,'Bread_cake:\t\t\t\t'+ E_Bread_cake.get()+"\n")
+        txtReceipt.insert(END,'Latte:\t\t\t\t'+ E_Latte.get()+"\n")
         break
     while a17 > 0:
         txtReceipt.insert(END,'Menu_Of_Day_1:\t\t\t\t'+ E_Menu_Of_Day1.get()+"\n")
@@ -223,23 +223,23 @@ def Reset():
     ServiceCharge.set("")
     txtReceipt.delete("1.0",END)
     
-    E_Latta.set("0")
-    E_Coke.set("0")
-    E_Iced_Latta.set("0")
-    E_Coffee.set("0")
+    E_cappuccino.set("0")
+    E_americano.set("0")
+    E_Cold_Brew.set("0")
+    E_Cold_Brew_FV.set("0")
     E_Cappuccin.set("0")
-    E_Tea.set("0")
-    E_Cold_coffee.set("0")
-    E_Beer.set("0")
+    E_SOF.set("0")
+    E_COF.set("0")
+    E_DCF.set("0")
 
-    E_Coffee_cake.set("0")
-    E_Black_forest.set("0")
-    E_Cream_cake.set("0")
-    E_Lagoos_cake.set("0")
-    E_Fruit_cake.set("0")
-    E_Chocolate_cake.set("0")
-    E_Chocolava.set("0")
-    E_Bread_cake.set("0")
+    E_Cold_Brew_FV_cake.set("0")
+    E_CheeseCake.set("0")
+    E_HotChoc.set("0")
+    E_Waffels.set("0")
+    E_MDShake.set("0")
+    E_ButterBeer.set("0")
+    E_MochaFrappe.set("0")
+    E_Latte.set("0")
     
     E_Menu_Of_Day1.set('0')
     E_Menu_Of_Day2.set('0')
@@ -268,22 +268,22 @@ def Reset():
     var19.set(0)
     var20.set(0)
 
-    txtLatta.configure(state=DISABLED)
-    txtCoke.configure(state=DISABLED)
-    txtIced_Latta.configure(state=DISABLED)
-    txtCoffee.configure(state=DISABLED)
+    txtcappuccino.configure(state=DISABLED)
+    txtamericano.configure(state=DISABLED)
+    txtCold_Brew.configure(state=DISABLED)
+    txtCold_Brew_FV.configure(state=DISABLED)
     txtCappuccin.configure(state=DISABLED)
-    txtTea.configure(state=DISABLED)
-    txtCold_coffee.configure(state=DISABLED)
-    txtBeer.configure(state=DISABLED)
-    txtCoffee_cake.configure(state=DISABLED)
-    txtBlack_forest.configure(state=DISABLED)
-    txtCream_cake.configure(state=DISABLED)
-    txtLagoos_cake.configure(state=DISABLED)
-    txtFruit_cake.configure(state=DISABLED)
-    txtChocolate_cake.configure(state=DISABLED)
-    txtChocolava.configure(state=DISABLED)
-    txtBread_cake.configure(state=DISABLED)
+    txtSOF.configure(state=DISABLED)
+    txtCOF.configure(state=DISABLED)
+    txtDCF.configure(state=DISABLED)
+    txtCold_Brew_FV_cake.configure(state=DISABLED)
+    txtCheeseCake.configure(state=DISABLED)
+    txtHotChoc.configure(state=DISABLED)
+    txtWaffels.configure(state=DISABLED)
+    txtMDShake.configure(state=DISABLED)
+    txtButterBeer.configure(state=DISABLED)
+    txtMochaFrappe.configure(state=DISABLED)
+    txtLatte.configure(state=DISABLED)
     txtMen1.configure(state=DISABLED)
     txtMen2.configure(state=DISABLED)
     txtSp1.configure(state=DISABLED)
@@ -296,85 +296,85 @@ def goback():
 
 def chkbutton_value():
     if (var1.get() == 1):
-        txtLatta.configure(state= NORMAL)
+        txtcappuccino.configure(state= NORMAL)
     elif var1.get()== 0:
-            txtLatta.configure(state= DISABLED)
-            E_Latta.set("0")
+            txtcappuccino.configure(state= DISABLED)
+            E_cappuccino.set("0")
     if (var2.get() == 1):
-        txtCoke.configure(state=NORMAL)
+        txtamericano.configure(state=NORMAL)
     elif var2.get()== 0:
-            txtCoke.configure(state=DISABLED)
-            E_Coke.set("0")
+            txtamericano.configure(state=DISABLED)
+            E_americano.set("0")
     if (var3.get() == 1):
-        txtIced_Latta.configure(state=NORMAL)
+        txtCold_Brew.configure(state=NORMAL)
     elif var3.get()== 0:
-            txtIced_Latta.configure(state=DISABLED)
-            E_Iced_Latta.set("0")
+            txtCold_Brew.configure(state=DISABLED)
+            E_Cold_Brew.set("0")
     if (var4.get() == 1):
-        txtCoffee.configure(state=NORMAL)
+        txtCold_Brew_FV.configure(state=NORMAL)
     elif var4.get()== 0:
-            txtCoffee.configure(state=DISABLED)
-            E_Coffee.set("0")
+            txtCold_Brew_FV.configure(state=DISABLED)
+            E_Cold_Brew_FV.set("0")
     if (var5.get() == 1):
         txtCappuccin.configure(state=NORMAL)
     elif var5.get()== 0:
             txtCappuccin.configure(state=DISABLED)
             E_Cappuccin.set("0")
     if (var6.get() == 1):
-        txtTea.configure(state=NORMAL)
+        txtSOF.configure(state=NORMAL)
     elif var6.get()== 0:
-            txtTea.configure(state=DISABLED)
-            E_Tea.set("0")
+            txtSOF.configure(state=DISABLED)
+            E_SOF.set("0")
     if (var7.get() == 1):
-        txtCold_coffee.configure(state=NORMAL)
+        txtCOF.configure(state=NORMAL)
     elif var7.get()== 0:
-            txtCold_coffee.configure(state=DISABLED)
-            E_Cold_coffee.set("0")
+            txtCOF.configure(state=DISABLED)
+            E_COF.set("0")
     if (var8.get() == 1):
-        txtBeer.configure(state=NORMAL)
+        txtDCF.configure(state=NORMAL)
     elif var8.get()==0:
-            txtBeer.configure(state=DISABLED)
-            E_Beer.set("0")
+            txtDCF.configure(state=DISABLED)
+            E_DCF.set("0")
     if (var9.get() == 1):
-        txtCoffee_cake.configure(state=NORMAL)
+        txtCold_Brew_FV_cake.configure(state=NORMAL)
     elif var9.get()== 0:
-            txtCoffee_cake.configure(state=DISABLED)
-            E_Coffee_cake.set("0")
+            txtCold_Brew_FV_cake.configure(state=DISABLED)
+            E_Cold_Brew_FV_cake.set("0")
     if (var10.get() == 1):
-        txtBlack_forest.configure(state=NORMAL)
+        txtCheeseCake.configure(state=NORMAL)
     elif var10.get()== 0:
-            txtBlack_forest.configure(state=DISABLED)
-            E_Black_forest.set("0")
+            txtCheeseCake.configure(state=DISABLED)
+            E_CheeseCake.set("0")
     if (var11.get() == 1):
-        txtCream_cake.configure(state=NORMAL)
+        txtHotChoc.configure(state=NORMAL)
     elif var11.get()== 0:
-            txtCream_cake.configure(state=DISABLED)
-            E_Cream_cake.set("0")
+            txtHotChoc.configure(state=DISABLED)
+            E_HotChoc.set("0")
     if (var12.get() == 1):
-        txtLagoos_cake.configure(state=NORMAL)
+        txtWaffels.configure(state=NORMAL)
     elif var12.get()== 0:
-            txtLagoos_cake.configure(state=DISABLED)
-            E_Lagoos_cake.set("0")
+            txtWaffels.configure(state=DISABLED)
+            E_Waffels.set("0")
     if (var13.get() == 1):
-        txtFruit_cake.configure(state=NORMAL)
+        txtMDShake.configure(state=NORMAL)
     elif var13.get()== 0:
-            txtFruit_cake.configure(state=DISABLED)
-            E_Fruit_cake.set("0")
+            txtMDShake.configure(state=DISABLED)
+            E_MDShake.set("0")
     if (var14.get() == 1):
-        txtChocolate_cake.configure(state=NORMAL)
+        txtButterBeer.configure(state=NORMAL)
     elif var14.get()== 0:
-            txtChocolate_cake.configure(state=DISABLED)
-            E_Chocolate_cake.set("0")
+            txtButterBeer.configure(state=DISABLED)
+            E_ButterBeer.set("0")
     if (var15.get() == 1):
-        txtChocolava.configure(state=NORMAL)
+        txtMochaFrappe.configure(state=NORMAL)
     elif var15.get()== 0:
-            txtChocolava.configure(state=DISABLED)
-            E_Chocolava.set("0")
+            txtMochaFrappe.configure(state=DISABLED)
+            E_MochaFrappe.set("0")
     if (var16.get() == 1):
-        txtBread_cake.configure(state=NORMAL)
+        txtLatte.configure(state=NORMAL)
     elif var16.get()== 0:
-            txtBread_cake.configure(state=DISABLED)
-            E_Bread_cake.set("0")
+            txtLatte.configure(state=DISABLED)
+            E_Latte.set("0")
     if (var17.get() == 1):
         txtMen1.configure(state=NORMAL)
     elif var17.get()== 0:
@@ -429,46 +429,46 @@ CostofDrinks=StringVar()
 ServiceCharge=StringVar()
 
 
-E_Latta=StringVar()
-E_Coke=StringVar()
-E_Iced_Latta=StringVar()
-E_Coffee=StringVar()
+E_cappuccino=StringVar()
+E_americano=StringVar()
+E_Cold_Brew=StringVar()
+E_Cold_Brew_FV=StringVar()
 E_Cappuccin=StringVar()
-E_Tea=StringVar()
-E_Cold_coffee=StringVar()
-E_Beer=StringVar()
+E_SOF=StringVar()
+E_COF=StringVar()
+E_DCF=StringVar()
 
-E_Coffee_cake=StringVar()
-E_Black_forest=StringVar()
-E_Cream_cake=StringVar()
-E_Lagoos_cake=StringVar()
-E_Fruit_cake=StringVar()
-E_Chocolate_cake=StringVar()
-E_Chocolava=StringVar()
-E_Bread_cake=StringVar()
+E_Cold_Brew_FV_cake=StringVar()
+E_CheeseCake=StringVar()
+E_HotChoc=StringVar()
+E_Waffels=StringVar()
+E_MDShake=StringVar()
+E_ButterBeer=StringVar()
+E_MochaFrappe=StringVar()
+E_Latte=StringVar()
 
 E_Menu_Of_Day1 = StringVar()
 E_Menu_Of_Day2 = StringVar()
 E_Season_Special_1 = StringVar()
 E_Season_Special_2 = StringVar()
 
-E_Latta.set("0")
-E_Coke.set("0")
-E_Iced_Latta.set("0")
-E_Coffee.set("0")
+E_cappuccino.set("0")
+E_americano.set("0")
+E_Cold_Brew.set("0")
+E_Cold_Brew_FV.set("0")
 E_Cappuccin.set("0")
-E_Tea.set("0")
-E_Cold_coffee.set("0")
-E_Beer.set("0")
+E_SOF.set("0")
+E_COF.set("0")
+E_DCF.set("0")
 
-E_Coffee_cake.set("0")
-E_Black_forest.set("0")
-E_Cream_cake.set("0")
-E_Lagoos_cake.set("0")
-E_Fruit_cake.set("0")
-E_Chocolate_cake.set("0")
-E_Chocolava.set("0")
-E_Bread_cake.set("0")
+E_Cold_Brew_FV_cake.set("0")
+E_CheeseCake.set("0")
+E_HotChoc.set("0")
+E_Waffels.set("0")
+E_MDShake.set("0")
+E_ButterBeer.set("0")
+E_MochaFrappe.set("0")
+E_Latte.set("0")
 
 E_Menu_Of_Day1.set('0')
 E_Menu_Of_Day2.set('0')
@@ -479,75 +479,75 @@ DateofOrder.set(time.strftime("%d/%m/%y"))
 
 #=================================================DRINKS===================================================================================================================
 
-Latta = Checkbutton(f1aa, text="  Latta \t\t", variable=var1, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=0,sticky=W)
+Capp = Checkbutton(f1aa, text="  Cappuccino\t\t", variable=var1, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=0,sticky=W)
 
-Coke = Checkbutton(f1aa, text="  Coke \t\t", variable=var2, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=1,sticky=W)
+Americano = Checkbutton(f1aa, text="  Americano\t\t", variable=var2, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=1,sticky=W)
 
-Iced_Latta = Checkbutton(f1aa, text="  Iced_Latta \t\t", variable=var3, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=2,sticky=W)
+Cold_Brew = Checkbutton(f1aa, text="  Cold Brew\t\t", variable=var3, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=2,sticky=W)
 
-Coffee = Checkbutton(f1aa, text="  Coffee \t\t", variable=var4, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
+Cold_Brew_FV = Checkbutton(f1aa, text="  Cold Brew FV\t\t", variable=var4, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
 
-Cappuccino = Checkbutton(f1aa, text="  Cappuccino \t\t", variable=var5, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
+Cappuccino = Checkbutton(f1aa, text="  Cappuccino\t\t", variable=var5, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
 
-Tea = Checkbutton(f1aa, text="  Tea \t\t", variable=var6, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=5,sticky=W)
+SOF = Checkbutton(f1aa, text="  Straberry Oreo Fr\t\t", variable=var6, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=5,sticky=W)
 
-Cold_coffee = Checkbutton(f1aa, text="  Cold_coffee \t\t", variable=var7, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=6,sticky=W)
+COF = Checkbutton(f1aa, text="  Cr Oreo Fr\t\t", variable=var7, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=6,sticky=W)
 
-Beer = Checkbutton(f1aa, text="  Beer \t\t", variable=var8, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=7,sticky=W)
+DOC = Checkbutton(f1aa, text="  Double Chocolate Fr\t\t", variable=var8, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=7,sticky=W)
 
-MOD1 = Checkbutton(f1aa, text="  Season Special 1 \t\t", variable=var19, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=8,sticky=W)
+MOD1 = Checkbutton(f1aa, text="  Season Special 1\t\t", variable=var19, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=8,sticky=W)
 
-MOD2 = Checkbutton(f1aa, text="  Season Special 2 \t\t", variable=var20, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=9,sticky=W)
+MOD2 = Checkbutton(f1aa, text="  Season Special 2\t\t", variable=var20, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=9,sticky=W)
 
 
 
 #====================================================CAKES======================================================================================================================
 
-Coffee_cake = Checkbutton(f1ab, text=" Coffee_cake \t\t\t", variable=var9, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=0,sticky=W)
+ColdBrewFV = Checkbutton(f1ab, text=" ColdBrewFV \t\t", variable=var9, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=0,sticky=W)
 
-Black_forest = Checkbutton(f1ab, text=" Black_forest \t\t\t", variable=var10, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=1,sticky=W)
+CheeseCake = Checkbutton(f1ab, text=" CheeseCake \t\t", variable=var10, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=1,sticky=W)
 
-Cream_cake = Checkbutton(f1ab, text=" Cream_cake \t\t\t", variable=var11, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=2,sticky=W)
+Hot_Chocolate = Checkbutton(f1ab, text=" Hot Chocolate \t\t", variable=var11, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=2,sticky=W)
 
-Lagoos_cake = Checkbutton(f1ab, text=" Lagoos_cake \t\t\t", variable=var12, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
+Waffels = Checkbutton(f1ab, text=" Waffels \t\t", variable=var12, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=3,sticky=W)
 
-Fruit_cake = Checkbutton(f1ab, text=" Fruit_cake \t\t\t", variable=var13, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
+MUDPieShake = Checkbutton(f1ab, text=" MUDPie Shake \t\t", variable=var13, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=4,sticky=W)
 
-Chocolate_cake = Checkbutton(f1ab, text=" Chocolate_cake \t\t\t", variable=var14, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=5,sticky=W)
+ButterBeer = Checkbutton(f1ab, text=" ButterBeer \t\t", variable=var14, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=5,sticky=W)
 
-Chocolava = Checkbutton(f1ab, text=" Chocolava \t\t\t", variable=var15, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=6,sticky=W)
+MochaFrappe = Checkbutton(f1ab, text=" MochaFrappe \t\t", variable=var15, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=6,sticky=W)
 
-Bread_cake = Checkbutton(f1ab, text=" Bread_cake \t\t\t", variable=var16, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=7,sticky=W)
+Latte = Checkbutton(f1ab, text=" Latte \t\t", variable=var16, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=7,sticky=W)
 
-MOD1 = Checkbutton(f1ab, text="  Menu Of The day 1 \t\t", variable=var17, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=8,sticky=W)
+SPP1 = Checkbutton(f1ab, text="  Menu Of The day 1 \t", variable=var17, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=8,sticky=W)
 
-MOD2 = Checkbutton(f1ab, text="  Menu Of The Day 2 \t\t", variable=var18, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=9,sticky=W)
+SPP2 = Checkbutton(f1ab, text="  Menu Of The Day 2 \t", variable=var18, onvalue=1, offvalue=0, font=('arial',18,'bold'),command=chkbutton_value).grid(row=9,sticky=W)
 
 #=====================================================ENTER WIDGE DRINKS================================================================================================================
 
-txtLatta = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Latta, state=DISABLED)
-txtLatta.grid(row=0,column=1)
+txtcappuccino = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_cappuccino, state=DISABLED)
+txtcappuccino.grid(row=0,column=1)
 
-txtCoke = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Coke, state=DISABLED)
-txtCoke.grid(row=1,column=1)
+txtamericano = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_americano, state=DISABLED)
+txtamericano.grid(row=1,column=1)
 
-txtIced_Latta = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Iced_Latta,state=DISABLED)
-txtIced_Latta.grid(row=2,column=1)
+txtCold_Brew = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew,state=DISABLED)
+txtCold_Brew.grid(row=2,column=1)
 
-txtCoffee = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Coffee,state=DISABLED)
-txtCoffee.grid(row=3,column=1)
+txtCold_Brew_FV = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew_FV,state=DISABLED)
+txtCold_Brew_FV.grid(row=3,column=1)
 
 txtCappuccin = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cappuccin,state=DISABLED)
 txtCappuccin.grid(row=4,column=1)
 
-txtTea = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Tea,state=DISABLED)
-txtTea.grid(row=5,column=1)
+txtSOF = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_SOF,state=DISABLED)
+txtSOF.grid(row=5,column=1)
 
-txtCold_coffee = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_coffee,state=DISABLED)
-txtCold_coffee.grid(row=6,column=1)
+txtCOF = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_COF,state=DISABLED)
+txtCOF.grid(row=6,column=1)
 
-txtBeer = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Beer,state=DISABLED)
-txtBeer.grid(row=7,column=1)
+txtDCF = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_DCF,state=DISABLED)
+txtDCF.grid(row=7,column=1)
 
 txtSp1 = Entry(f1aa,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Season_Special_1,state=DISABLED)
 txtSp1.grid(row=8,column=1)
@@ -559,29 +559,29 @@ txtSp2.grid(row=9,column=1)
 
 #=====================================================ENTER WIDGE CAKES========================================================================================
 
-txtCoffee_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Coffee_cake,state=DISABLED)
-txtCoffee_cake.grid(row=0,column=1)
+txtCold_Brew_FV_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cold_Brew_FV_cake,state=DISABLED)
+txtCold_Brew_FV_cake.grid(row=0,column=1)
 
-txtBlack_forest = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Black_forest,state=DISABLED)
-txtBlack_forest.grid(row=1,column=1)
+txtCheeseCake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_CheeseCake,state=DISABLED)
+txtCheeseCake.grid(row=1,column=1)
 
-txtCream_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Cream_cake,state=DISABLED)
-txtCream_cake.grid(row=2,column=1)
+txtHotChoc = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_HotChoc,state=DISABLED)
+txtHotChoc.grid(row=2,column=1)
 
-txtLagoos_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Lagoos_cake,state=DISABLED)
-txtLagoos_cake.grid(row=3,column=1)
+txtWaffels = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Waffels,state=DISABLED)
+txtWaffels.grid(row=3,column=1)
 
-txtFruit_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Fruit_cake,state=DISABLED)
-txtFruit_cake.grid(row=4,column=1)
+txtMDShake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_MDShake,state=DISABLED)
+txtMDShake.grid(row=4,column=1)
 
-txtChocolate_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Chocolate_cake,state=DISABLED)
-txtChocolate_cake.grid(row=5,column=1)
+txtButterBeer = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_ButterBeer,state=DISABLED)
+txtButterBeer.grid(row=5,column=1)
 
-txtChocolava = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Chocolava,state=DISABLED)
-txtChocolava.grid(row=6,column=1)
+txtMochaFrappe = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_MochaFrappe,state=DISABLED)
+txtMochaFrappe.grid(row=6,column=1)
 
-txtBread_cake = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Bread_cake,state=DISABLED)
-txtBread_cake.grid(row=7,column=1)
+txtLatte = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Latte,state=DISABLED)
+txtLatte.grid(row=7,column=1)
 
 txtMen1 = Entry(f1ab,font=('arial',16,'bold'),bd=8,width=6,justify='left',textvariable=E_Menu_Of_Day1,state=DISABLED)
 txtMen1.grid(row=8,column=1)
